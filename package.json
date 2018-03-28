@@ -4,11 +4,13 @@
   "description": "Discord Bot Development tools",
   "main": "index.js",
   "scripts": {
-    "test": "randColor"
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/axelgreavette/bot-utils"
+    "url": "https://github.com/axelgreavette/bot-utils"
+  },
+ "dependencies": {
+   "os": "^0.0.1"
   },
   "keywords": [
     "discord",
