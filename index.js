@@ -43,7 +43,7 @@ exports.isNumber = function(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 exports.removeHtml = function(text) {  
-    var replacements= {"<": "&lt;", ">": "&gt;","&": "&amp;", """: "&quot;"};                      
+    var replacements= {"<": "&lt;", ">": "&gt;","&": "&amp;", '"': "&quot;"};                      
     return text.replace(/[<>&"]/g, function(character) {  
         return replacements[character];  
     }); 
