@@ -10,7 +10,6 @@
     "url": "https://github.com/axelgreavette/bot-utils"
   },
  "dependencies": {
-   //"os": "^0.0.1"
   },
   "keywords": [
     "discord",
