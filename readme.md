@@ -10,6 +10,8 @@ Docs:
 
 .uptime() : Returns uptime
 
+.osUptime() : OS Uptime
+
 .capital(string) : Capitalizes the first letter of the string
 
 .randAlphaNum(len) : Random Alpha numeric
@@ -31,6 +33,8 @@ console.log(util.randInt(1,5))
 //4
 console.log(util.uptime())
 //1 day, 12 minutes and 10 seconds
+console.log(util.osUptime())
+//12 days 14 minutes 1 second
 console.log(util.capital('hello world'))
 //Hello world
 console.log(util.randAlphaNum(1))
