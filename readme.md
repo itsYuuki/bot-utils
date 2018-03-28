@@ -1,4 +1,5 @@
-#
+#This is ahead of the NPM Version found [here](https://npmjs.com/package/bot-utils). The NPM version will be updated after commits have been approved here
+
 Utilities usable in any Discord Bot
 
 Docs:
