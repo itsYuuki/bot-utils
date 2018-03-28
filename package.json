@@ -1,0 +1,24 @@
+{
+  "name": "bot-utils",
+  "version": "1.0.6",
+  "description": "Discord Bot Development tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "randColor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/axelgreavette/bot-utils"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discord",
+    "javascript",
+    "discord.io",
+    "discord.js",
+    "dualcord"
+  ],
+  "author": "Axel Greavette",
+  "license": "ISC"
+}
