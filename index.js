@@ -31,8 +31,20 @@ timestr += secs + " seconds";
 }
 return timestr
 }
-exports.randAlphaNum(len) {
+exports.randAlphaNum = function(len) {
     var rdmString = "";
     for( ; rdmString.length < len; rdmString  += Math.random().toString(36).substr(2));
     return  rdmString.substr(0, len);
+}
+exports.round = function(number, decimalPlace){
+	return number.toFixed(decimalPlace)
+}
+exports.isNumber = function(n){
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+exports.removeHtml = function(text) {  
+    var replacements= {"<": "&lt;", ">": "&gt;","&": "&amp;", """: "&quot;"};                      
+    return text.replace(/[<>&"]/g, function(character) {  
+        return replacements[character];  
+    }); 
 }
