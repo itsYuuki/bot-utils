@@ -24,6 +24,8 @@ Docs:
 
 .randItemFromArray(array) : Random item from inputted array
 
+.arrayTo(number) : Array of numbers from 0 to inputed one
+
 How to use:
 
 ```
@@ -49,6 +51,8 @@ console.log(util.removeHtml('<h1>hello world<h1>'))
 //hello world
 console.log(util.randItemFromArray(['2', 12, 'four']))
 //12
+console.log(util.arrayTo(5))
+//[1,2,3,4,5]
 ```
 
 More coming in future
