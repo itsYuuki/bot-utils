@@ -72,3 +72,6 @@ exports.removeHtml = function(text) {
         return replacements[character];  
     }); 
 }
+exports.randItemFromArry = function(array){
+	return array[Math.floor(Math.random() * array.length)];
+}
