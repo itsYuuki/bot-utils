@@ -1,14 +1,30 @@
 var exports = module.exports = {};
 var os = require('os')
 
-exports.randInt = function(min, max){
-	return Math.floor(Math.random() * (max - min + 1)) + min;
+/**
+ * Creates a random integer within a given range
+ * @param  {Int} min Start range
+ * @param  {Int} max End range
+ * @return {Int}     Random value within range
+ */
+exports.randInt = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-exports.randColor = function(){
-	return Math.floor(Math.random()*0x1000000)
+
+/**
+ * Creates a random hex colour
+ * @return {Int} Random hex color code
+ */
+exports.randColor = function() {
+  return Math.floor(Math.random() * 0x1000000)
 }
-exports.osUptime = function(){
-	 var msec = os.uptime().toFixed(0) * 1000;
+
+/**
+ * Geneates a uptime message for the system
+ * @return {String} A human readable string of uptime
+ */
+exports.osUptime = function() {
+  var msec = os.uptime().toFixed(0) * 1000;
   var days = Math.floor(msec / 1000 / 60 / 60 / 24);
   msec -= days * 1000 * 60 * 60 * 24;
   var hours = Math.floor(msec / 1000 / 60 / 60);
@@ -17,68 +33,120 @@ exports.osUptime = function(){
   msec -= mins * 1000 * 60;
   var secs = Math.floor(msec / 1000);
   var timestr = "";
-  if(days > 0) {
-      timestr += days + " days ";
+  if (days > 0) {
+    timestr += days + " days ";
   }
-  if(hours > 0) {
-      timestr += hours + " hours ";
+  if (hours > 0) {
+    timestr += hours + " hours ";
   }
-  if(mins > 0) {
-      timestr += mins + " minutes ";
+  if (mins > 0) {
+    timestr += mins + " minutes ";
   }
-  if(secs > 0) {
-      timestr += secs + " seconds";
+  if (secs > 0) {
+    timestr += secs + " seconds";
   }
   return timestr
 }
-exports.uptime = function(){
-var msec = process.uptime().toFixed(0) * 1000;
-var days = Math.floor(msec / 1000 / 60 / 60 / 24);
-msec -= days * 1000 * 60 * 60 * 24;
-var hours = Math.floor(msec / 1000 / 60 /60);
-msec -= hours * 1000 * 60 * 60;
-var mins = Math.floor(msec / 1000 / 60);
-msec -= mins * 1000 * 60;
-var secs = Math.floor(msec / 1000);
-var timestr = "";
-if (days > 0) {
-timestr += days + " days ";
+
+/**
+ * Geneates a uptime message for the node process
+ * @return {String} A human readable string of uptime
+ */
+exports.uptime = function() {
+  var msec = process.uptime().toFixed(0) * 1000;
+  var days = Math.floor(msec / 1000 / 60 / 60 / 24);
+  msec -= days * 1000 * 60 * 60 * 24;
+  var hours = Math.floor(msec / 1000 / 60 / 60);
+  msec -= hours * 1000 * 60 * 60;
+  var mins = Math.floor(msec / 1000 / 60);
+  msec -= mins * 1000 * 60;
+  var secs = Math.floor(msec / 1000);
+  var timestr = "";
+  if (days > 0) {
+    timestr += days + " days ";
+  }
+  if (hours > 0) {
+    timestr += hours + " hours ";
+  }
+  if (mins > 0) {
+    timestr += mins + " minutes ";
+  }
+  if (secs > 0) {
+    timestr += secs + " seconds";
+  }
+  return timestr
 }
-if (hours > 0) {
-timestr += hours + " hours ";
-}
-if (mins > 0) {
-timestr += mins + " minutes ";
-}
-if (secs > 0) {
-timestr += secs + " seconds";
-}
-return timestr 
-}
+
+/**
+ * random alpha numberic number generation
+ * @param  {Int} len Length of it
+ * @return {String}     The resultant
+ */
 exports.randAlphaNum = function(len) {
-    var rdmString = "";
-    for( ; rdmString.length < len; rdmString  += Math.random().toString(36).substr(2));
-    return  rdmString.substr(0, len);
+  var rdmString = "";
+  for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
+  return rdmString.substr(0, len);
 }
-exports.round = function(number, decimalPlace){
-	return number.toFixed(decimalPlace)
+
+/**
+ * Round a number to set decimal places
+ * @param  {Int} number       Number to be rounded
+ * @param  {Int} decimalPlace How many decimal places
+ * @return {Int}              Resultant value
+ */
+exports.round = function(number, decimalPlace) {
+  return number.toFixed(decimalPlace)
 }
-exports.isNumber = function(n){
-    return !isNaN(parseFloat(n)) && isFinite(n);
+
+/**
+ * Checks if string is number
+ * @param  {String} n Value to check
+ * @return {Boolean}   If true or false
+ */
+exports.isNumber = function(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
-exports.removeHtml = function(text) {  
-    var replacements= {"<": "&lt;", ">": "&gt;","&": "&amp;", '"': "&quot;"};                      
-    return text.replace(/[<>&"]/g, function(character) {  
-        return replacements[character];  
-    }); 
+
+/**
+ * Converts html tags to exscaped form
+ * @param  {String} text Text to escape
+ * @return {[type]}      [description]
+ */
+exports.escapeHtml = function(text) {
+  var replacements = {
+    "<": "&lt;",
+    ">": "&gt;",
+    "&": "&amp;",
+    '"': "&quot;"
+  };
+  return text.replace(/[<>&"]/g, function(character) {
+    return replacements[character];
+  });
 }
-exports.randItemFromArry = function(array){
-	return array[Math.floor(Math.random() * array.length)];
+
+/**
+ * Gets a random element from an array
+ * @param  {Array} array Array to have value choosen
+ * @return {Member}       Resultant selection
+ */
+exports.randItemFromArry = function(array) {
+  return array[this.randInt(0,array.length)];
 }
-exports.arrayTo(max){
-	var numbersArray = []
-	return for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100] 
+
+/**
+ * Initialize array of given length
+ * @type {Boolean} how many values to be inside
+ * @return {Array} the array
+ */
+exports.arrayTo(max) {
+  return new Array(max);
 }
-exports.isArray = function(obj){
-    return Array.isArray(obj) ;
+
+/**
+ * Checks if value is array
+ * @param  {Something} obj Cause no one knows if this variable is an array or not
+ * @return {Boolean}     Stetment
+ */
+exports.isArray = function(obj) {
+  return Array.isArray(obj);
 }
