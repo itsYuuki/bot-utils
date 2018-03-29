@@ -26,6 +26,8 @@ Docs:
 
 .arrayTo(number) : Array of numbers from 0 to inputed one
 
+.isArray(array) : Checks if the input is an array
+
 How to use:
 
 ```
@@ -53,6 +55,8 @@ console.log(util.randItemFromArray(['2', 12, 'four']))
 //12
 console.log(util.arrayTo(5))
 //[1,2,3,4,5]
+console.log(util.isArray(['1','2','3','4'])
+//true
 ```
 
 More coming in future
