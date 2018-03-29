@@ -53,7 +53,7 @@ timestr += mins + " minutes ";
 if (secs > 0) {
 timestr += secs + " seconds";
 }
-return timestr
+return timestr 
 }
 exports.randAlphaNum = function(len) {
     var rdmString = "";
@@ -71,4 +71,14 @@ exports.removeHtml = function(text) {
     return text.replace(/[<>&"]/g, function(character) {  
         return replacements[character];  
     }); 
+}
+exports.randItemFromArry = function(array){
+	return array[Math.floor(Math.random() * array.length)];
+}
+exports.arrayTo(max){
+	var numbersArray = []
+	return for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100] 
+}
+exports.isArray = function(obj){
+    return Array.isArray(obj) ;
 }

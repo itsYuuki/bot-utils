@@ -22,6 +22,12 @@ Docs:
 
 .removeHtml(string) : Removes the html from the string
 
+.randItemFromArray(array) : Random item from inputted array
+
+.arrayTo(number) : Array of numbers from 0 to inputed one
+
+.isArray(array) : Checks if the input is an array
+
 How to use:
 
 ```
@@ -43,8 +49,14 @@ console.log(util.round(2.482482, 4))
 //2.4824
 console.log(util.isNumber(3))
 //true
-console.log(removeHtml('<h1>hello world<h1>'))
+console.log(util.removeHtml('<h1>hello world<h1>'))
 //hello world
+console.log(util.randItemFromArray(['2', 12, 'four']))
+//12
+console.log(util.arrayTo(5))
+//[1,2,3,4,5]
+console.log(util.isArray(['1','2','3','4'])
+//true
 ```
 
 More coming in future
