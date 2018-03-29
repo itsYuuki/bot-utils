@@ -80,5 +80,5 @@ exports.arrayTo(max){
 	return for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100] 
 }
 exports.isArray = function(obj){
-    return Object.prototype.toString.call(obj) === '[object Array]' ;
+    return Array.isArray(obj) ;
 }
