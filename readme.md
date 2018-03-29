@@ -3,6 +3,7 @@
 Utilities usable in any Discord Bot
 
 Docs:
+Full docs [here](https://axelgreavette.github.io/BotUtils/)
 
 .randColor() : Gives you a random color code
 
@@ -27,6 +28,7 @@ Docs:
 .arrayTo(number) : Array of numbers from 0 to inputed one
 
 .isArray(array) : Checks if the input is an array
+
 
 How to use:
 
