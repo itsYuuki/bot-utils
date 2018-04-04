@@ -1,5 +1,6 @@
 var exports = module.exports = {};
 var os = require('os')
+const clockit = require('clockit');
 
 /**
  * Creates a random integer within a given range
@@ -17,6 +18,23 @@ exports.randInt = function(min, max) {
  */
 exports.randColor = function() {
   return Math.floor(Math.random() * 0x1000000)
+}
+/**
+ * Grabs you your CPU Usage
+ * @return {Int} CPU Usage as a decimal
+ */
+
+exports.start = function() {
+  const timer = clockit.start();
+  const startCpu = process.cpuUsage();
+  return {
+    usage() {
+      const u = process.cpuUsage(startCpu);
+      u.time = timer.us;
+      u.percent = (u.system + u.user) / u.time * 100;
+      return u;
+    }
+  };
 }
 
 /**
