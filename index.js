@@ -147,7 +147,7 @@ exports.escapeHtml = function(text) {
  * @param  {Array} array Array to have value choosen
  * @return {Member}       Resultant selection
  */
-exports.randItemFromArry = function(array) {
+exports.randItemFromArray = function(array) {
   return array[this.randInt(0,array.length)];
 }
 
