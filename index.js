@@ -148,14 +148,15 @@ exports.escapeHtml = function(text) {
  * @return {Member}       Resultant selection
  */
 exports.randItemFromArray = function(items) {
-    return items[~~(items.length * Math.random())];
+  return items[~~(items.length * Math.random())];
+}
 
 /**
  * Initialize array of given length
  * @type {Boolean} how many values to be inside
  * @return {Array} the array
  */
-exports.arrayTo(max) {
+exports.arrayTo = function(max) {
   return new Array(max);
 }
 
